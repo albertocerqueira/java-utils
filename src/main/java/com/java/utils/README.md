@@ -1,6 +1,6 @@
-# Utils - Framework JAVA
+# Utils
 =====================
-Classes com conjunto de métodos que executam funções comuns, muitas vezes re-utilizados. A maioria das classes de utilitários, definir esses métodos comuns sob escopo estático.
+### <sub>Classes set of methods that perform common functions often reused. Most classes utilities define these common methods under static scope.</sub>
 
 - [BigDecimalUtils.java](#bigDecimalUtils.java)
 - [BooleanConverter.java](#booleanConverter.java)
@@ -42,4 +42,4 @@ Classes com conjunto de métodos que executam funções comuns, muitas vezes re-
 ### StringConverter.java
 
 ### StringUtils.java
-Classe com conjunto de métodos que executam funções comuns para manuseio de Strings, validações ou tratamentos, muitas vezes re-utilizados. A maioria das classes de utilitários definem esses métodos comuns sob escopo estático. [veja](https://github.com/albertocerqueira/java-framework/blob/master/framework/src/main/java/br/com/java/framework/utils/StringUtils.java "veja").
+Class with set of methods that perform common functions for handling strings, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/StringUtils.java "see more").
