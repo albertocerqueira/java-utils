@@ -15,6 +15,7 @@
 /classes
 *.class
 /classes/*
+
 *.class
 
 # Mobile Tools for Java (J2ME)
