@@ -35,7 +35,7 @@ public enum RegexValidation implements IRegexValidation {
 	PLACA("[A-Z]{3}[0-9]{4}|[A-Z]{3}-[0-9]{4}"),
 	OnlyNumbers("^[0-9]+$"),
 	OnlyLetters("^[a-zA-Z]+$"),
-	OnlyLettersNumbers("^[a-zA-Z0-9]+$");
+	OnlyLettersOrNumbers("^[a-zA-Z0-9]+$");
 	
 	private final String regexExpression;
 	private final boolean applyFormat;

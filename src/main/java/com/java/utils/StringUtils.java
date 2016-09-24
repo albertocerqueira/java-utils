@@ -74,10 +74,10 @@ public class StringUtils implements IConverter<String> {
 	 * @param str (String) string para verificação
 	 * @return (boolean) true caso a String possua apenas letras e números e false caso contrário
 	 */
-    public static boolean isOnlyLettersNumbers(String str) {
+    public static boolean isOnlyLettersOrNumbers(String str) {
 		boolean ret = false;
 		if (!StringUtils.isBlank(str)) {
-			ret = str.matches(RegexValidation.OnlyLettersNumbers.expression());
+			ret = str.matches(RegexValidation.OnlyLettersOrNumbers.expression());
 		}
 		return ret;
 	}
