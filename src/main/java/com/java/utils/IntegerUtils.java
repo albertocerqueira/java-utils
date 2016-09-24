@@ -3,8 +3,8 @@ package com.java.utils;
 import java.util.Date;
 
 import com.java.IConverter;
-import com.java.RegexValidation;
 import com.java.exception.ConverterException;
+import com.java.regex.RegexValidation;
 
 public class IntegerUtils implements IConverter<Integer> {
 

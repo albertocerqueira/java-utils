@@ -1,6 +1,6 @@
 package com.java.exception;
 
-import com.java.ManagerLog;
+import com.java.utils.LogUtils;
 
 public class ConverterException extends UserException {
 	
@@ -9,12 +9,12 @@ public class ConverterException extends UserException {
 	@SuppressWarnings("rawtypes")
 	public ConverterException(Class origin, Throwable cause) {
 		super(cause);
-		ManagerLog.error(origin, cause);
+		LogUtils.error(origin, cause);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	public ConverterException(Class origin, String message) {
 		super(message);
-		ManagerLog.error(origin, message);
+		LogUtils.error(origin, message);
 	}
 }

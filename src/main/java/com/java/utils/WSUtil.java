@@ -24,7 +24,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.java.ManagerLog;
 import com.java.exception.CriticalUserException;
 import com.java.exception.UserException;
 
@@ -41,8 +40,8 @@ public class WSUtil {
 
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			jaxbMarshaller.marshal(object, baos);
-			if (ManagerLog.isDebug(WSUtil.class)) {
-				ManagerLog.debug(WSUtil.class, baos.toString());
+			if (LogUtils.isDebug(WSUtil.class)) {
+				LogUtils.debug(WSUtil.class, baos.toString());
 			}
 			return baos;
 		} catch (Exception e) {
@@ -52,9 +51,9 @@ public class WSUtil {
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				jaxbMarshaller.marshal(object, baos);
 				String xmlComErrodeParser = baos.toString();
-				ManagerLog.critical(WSUtil.class, e, "Erro na valida\u00e7\u00e3o dos dados para gera\u00e7\u00e3o do XML : " + xmlComErrodeParser);
+				LogUtils.critical(WSUtil.class, e, "Erro na valida\u00e7\u00e3o dos dados para gera\u00e7\u00e3o do XML : " + xmlComErrodeParser);
 			} catch (Exception ex) {
-				ManagerLog.critical(WSUtil.class, e, "Erro na valida\u00e7\u00e3o dos dados para gera\u00e7\u00e3o do XML.");
+				LogUtils.critical(WSUtil.class, e, "Erro na valida\u00e7\u00e3o dos dados para gera\u00e7\u00e3o do XML.");
 			}
 			throw new UserException("Erro na valida\u00e7\u00e3o dos dados para gera\u00e7\u00e3o do XML.");
 		}

@@ -1,6 +1,6 @@
 package com.java.exception;
 
-import com.java.ManagerLog;
+import com.java.utils.LogUtils;
 
 public class UserException extends RuntimeException {
 
@@ -27,8 +27,8 @@ public class UserException extends RuntimeException {
 	 */
 	public UserException(String message, Throwable cause) {
 		super(message, cause);
-		if (ManagerLog.isDebug(UserException.class)) {
-			ManagerLog.debug(UserException.class, cause, message);
+		if (LogUtils.isDebug(UserException.class)) {
+			LogUtils.debug(UserException.class, cause, message);
 		}
 	}
 	

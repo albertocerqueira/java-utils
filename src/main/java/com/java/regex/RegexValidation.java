@@ -1,4 +1,4 @@
-package com.java;
+package com.java.regex;
 
 public enum RegexValidation implements IRegexValidation {
 	

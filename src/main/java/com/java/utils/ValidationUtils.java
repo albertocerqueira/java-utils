@@ -1,6 +1,6 @@
 package com.java.utils;
 
-import com.java.RegexValidation;
+import com.java.regex.RegexValidation;
 
 public class ValidationUtils {
 

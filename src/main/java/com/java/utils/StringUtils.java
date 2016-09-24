@@ -5,8 +5,8 @@ import java.util.Map;
 
 import com.ibm.icu.text.Normalizer;
 import com.java.IConverter;
-import com.java.RegexValidation;
 import com.java.exception.ConverterException;
+import com.java.regex.RegexValidation;
 
 public class StringUtils implements IConverter<String> {
 

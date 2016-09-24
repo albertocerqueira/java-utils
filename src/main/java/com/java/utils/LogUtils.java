@@ -1,4 +1,4 @@
-package com.java;
+package com.java.utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ManagerLog {
+public class LogUtils {
 
 	private static Map<String, Boolean> loggerInfo = new HashMap<String, Boolean>();
 	private static Map<String, Boolean> loggerDebug = new HashMap<String, Boolean>();

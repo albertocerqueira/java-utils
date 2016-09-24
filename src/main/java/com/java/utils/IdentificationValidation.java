@@ -3,8 +3,8 @@ package com.java.utils;
 import java.util.InputMismatchException;
 
 import com.java.ComplexValidation;
-import com.java.RegexValidation;
 import com.java.exception.UserLinkException;
+import com.java.regex.RegexValidation;
 
 public class IdentificationValidation implements ComplexValidation {
 
