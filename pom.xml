@@ -228,5 +228,12 @@
 			<artifactId>icu4j</artifactId>
 			<version>50.1</version>
 		</dependency>
+		
+		<!-- soap -->
+		<dependency>
+			<groupId>soap</groupId>
+			<artifactId>soap</artifactId>
+			<version>2.3</version>
+		</dependency>
 	</dependencies>
 </project>
