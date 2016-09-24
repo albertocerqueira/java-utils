@@ -1,5 +1,7 @@
 package com.java;
 
+import com.java.exception.UserLinkException;
+
 /**
  * 
  * Interface usada para validar os dados da tela, esta interface pode ser usada como closure ou ter uma implementacao caso seja necessario 

@@ -1,7 +1,7 @@
 package com.java.utils;
 
-import com.java.ConverterException;
 import com.java.IConverter;
+import com.java.exception.ConverterException;
 
 public class LongUtils implements IConverter<Long> {
 

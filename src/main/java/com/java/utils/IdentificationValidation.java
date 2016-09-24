@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 import com.java.ComplexValidation;
 import com.java.RegexValidation;
-import com.java.UserLinkException;
+import com.java.exception.UserLinkException;
 
 public class IdentificationValidation implements ComplexValidation {
 

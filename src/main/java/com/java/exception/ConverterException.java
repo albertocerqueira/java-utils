@@ -1,4 +1,6 @@
-package com.java;
+package com.java.exception;
+
+import com.java.ManagerLog;
 
 public class ConverterException extends UserException {
 	

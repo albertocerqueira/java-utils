@@ -7,8 +7,8 @@ import java.text.ParseException;
 import java.util.Currency;
 import java.util.Locale;
 
-import com.java.ConverterException;
-import com.java.UserException;
+import com.java.exception.ConverterException;
+import com.java.exception.UserException;
 
 public class FormatCurrency {
 

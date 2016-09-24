@@ -2,8 +2,8 @@ package com.java.utils;
 
 import java.math.BigDecimal;
 
-import com.java.ConverterException;
 import com.java.IConverter;
+import com.java.exception.ConverterException;
 
 public class BigDecimalUtils implements IConverter<BigDecimal> {
 

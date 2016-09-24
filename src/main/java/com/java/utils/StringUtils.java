@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.ibm.icu.text.Normalizer;
-import com.java.ConverterException;
 import com.java.IConverter;
 import com.java.RegexValidation;
+import com.java.exception.ConverterException;
 
 public class StringUtils implements IConverter<String> {
 

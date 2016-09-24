@@ -5,8 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.java.ConverterException;
 import com.java.IConverter;
+import com.java.exception.ConverterException;
 
 /**
  * Classe utilitaria de data. E fortemente recomendado que essa classe seja utilizado quando um objeto Calendar precisar ser criado pois esta classe
