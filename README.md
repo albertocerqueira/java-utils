@@ -6,6 +6,5 @@
 
 ### <sub>Generator</sub>
 <sub>Set of classes with methods that perform common functions, often re-used to generate specific registration data. [see more](https://github.com/albertocerqueira/java-utils/tree/master/src/main/java/com/java/generator/ "see more").</sub>
-
 ### <sub>Utils</sub>
 <sub>Classes set of methods that perform common functions often reused. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/tree/master/src/main/java/com/java/utils/ "see more").</sub>
