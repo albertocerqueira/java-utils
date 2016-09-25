@@ -9,8 +9,11 @@ import com.java.IConverter;
 import com.java.exception.ConverterException;
 
 /**
- * Classe utilitaria de data. E fortemente recomendado que essa classe seja utilizado quando um objeto Calendar precisar ser criado pois esta classe
- * forca o Locale para pt_BR padrao esse a ser utilizado pela aplicacao.
+ * 
+ * Class date utilitaria. And strongly recommended that this class be used when 
+ * a Calendar object must be created for this class forces the locale pt_BR to 
+ * this standard being used by the application.
+ * 
  */
 public class DateUtils implements IConverter<Calendar> {
 	
@@ -24,10 +27,16 @@ public class DateUtils implements IConverter<Calendar> {
 	}
 	
 	/**
-	 * Converte a string informada em data (a string deve ter o formato dd/MM/yyyy)
-	 * @param date (String) representa a data
-	 * @return (Calendar) data que estava representada na string
-	 * @throws ConverterException Caso o formato não seja compatível com a formatação da String
+	 * 
+	 * Convert the string informed on a date (the string must have the format dd/mm/yyyy)
+	 * 
+	 * @param date (String) represents the date
+	 * @return (Calendar) date that was represented in the string
+	 * @throws 
+	 * 		(ConverterException) if the format is not compatible with the format of the String
+	 * 
+	 * @author albertocerqueira
+	 * 
 	 */
 	public Calendar convert(String date) throws ConverterException {
 		Calendar data = null;
@@ -42,8 +51,12 @@ public class DateUtils implements IConverter<Calendar> {
 	}
 	
 	/**
-	 * Retorna um objeto Calendar
-	 * @return (Calendar) calendar com o Locale pt_BR
+	 * 
+	 * Returns a Calendar object.
+	 * @return (Calendar) calendar with the locale pt_BR
+	 * 
+	 * @author albertocerqueira
+	 * 
 	 */
 	public static Calendar getCalendar() {
 		return Calendar.getInstance(LocaleUtils.DEFAULT_LOCALE);
@@ -176,6 +189,7 @@ public class DateUtils implements IConverter<Calendar> {
 	 * @return (Stirng) data converted to the new standard
 	 * 
 	 * @author albertocerqueira
+	 * 
 	 */
 	public static String convertPattern(String date, String oldPattern, String newPattern) throws ParseException {
 		Calendar c = stringToCalendar(date, oldPattern);

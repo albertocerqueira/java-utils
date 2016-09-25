@@ -1,6 +1,7 @@
 package com.java.utils;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,12 +12,54 @@ import java.io.ObjectOutputStream;
 
 import com.java.io.UnicodeBOMInputStream;
 
+/**
+ * 
+ * IO utils
+ *
+ */
 public class IOUtils {
 
+	private IOUtils() {
+		throw new AssertionError();
+	}
+
+	/**
+	 * Close closable object and wrap {@link IOException} with
+	 * {@link RuntimeException}
+	 * 
+	 * @param closeable
+	 *            closeable object
+	 */
+	public static void close(Closeable closeable) {
+		if (closeable != null) {
+			try {
+				closeable.close();
+			} catch (IOException e) {
+				throw new RuntimeException("IOException occurred. ", e);
+			}
+		}
+	}
+
+	/**
+	 * Close closable and hide possible {@link IOException}
+	 * 
+	 * @param closeable
+	 *            closeable object
+	 */
+	public static void closeQuietly(Closeable closeable) {
+		if (closeable != null) {
+			try {
+				closeable.close();
+			} catch (IOException e) {
+				// Ignored
+			}
+		}
+	}
+
 	public static InputStream getInputStreamWithoutBOM(InputStream fileContent) throws Exception {
-		 UnicodeBOMInputStream ubis = new UnicodeBOMInputStream(fileContent);
-		 ubis.skipBOM();
-		 return ubis;
+		UnicodeBOMInputStream ubis = new UnicodeBOMInputStream(fileContent);
+		ubis.skipBOM();
+		return ubis;
 	}
 
 	public static byte[] toByteArray(InputStream input, int bufferSize) throws IOException {
@@ -45,9 +88,11 @@ public class IOUtils {
 			// shift the bits down
 			ch = (byte) (ch & 0x0F);
 			// must do this is high order bit is on!
-			out.append(pseudo[(int) ch]); // convert the nibble to a String Character
+			out.append(pseudo[(int) ch]); // convert the nibble to a String
+											// Character
 			ch = (byte) (in[i] & 0x0F); // Strip off low nibble
-			out.append(pseudo[(int) ch]); // convert the nibble to a String Character
+			out.append(pseudo[(int) ch]); // convert the nibble to a String
+											// Character
 			i++;
 		}
 
@@ -65,7 +110,7 @@ public class IOUtils {
 			out.close();
 		}
 	}
-	
+
 	public static Object deserialize(String fromFileName) throws IOException, ClassNotFoundException {
 		FileInputStream fileIn = new FileInputStream(fromFileName);
 		ObjectInputStream ou = new ObjectInputStream(fileIn);

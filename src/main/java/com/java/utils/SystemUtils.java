@@ -1,5 +1,10 @@
 package com.java.utils;
 
+/**
+ * 
+ * SystemUtils
+ * 
+ */
 public class SystemUtils {
 
 	/**
