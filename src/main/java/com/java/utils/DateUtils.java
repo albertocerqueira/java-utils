@@ -54,22 +54,22 @@ public class DateUtils implements IConverter<Calendar> {
 	 * @param pattern (String) padrão desejado
 	 * @return (String) data no formato string com padrão do parametro
 	 */
-	public static String today(String pattern){
-		return dateToString(Calendar.getInstance(), pattern);
+	public static String today(String pattern) {
+		return calendarToString(Calendar.getInstance(), pattern);
 	}
 	
 	/**
 	 * Transforma o objeto Date em string seguindo o formato definido no parametro pattern
-	 * @param date (Calendar) data a ser transformada
+	 * @param calendar (Calendar) data a ser transformada
 	 * @param pattern (String) formato de saída da data
 	 * @return (String) data no formato string com padrão do parametro
 	 */
-	public static String dateToString(Calendar date, String pattern) {
-		if (date == null) {
+	public static String calendarToString(Calendar calendar, String pattern) {
+		if (calendar == null) {
 			return "";
 		}
 		SimpleDateFormat format = new SimpleDateFormat(pattern, LocaleUtils.DEFAULT_LOCALE);
-		return format.format(date.getTime());
+		return format.format(calendar.getTime());
 	}
 	
     /**
@@ -164,5 +164,21 @@ public class DateUtils implements IConverter<Calendar> {
 	public static Integer stringToIntegerHora(String date, String pattern) throws ParseException {
 		Calendar c = stringToCalendar(date, pattern);
 		return calendarToIntegerHora(c);
+	}
+	
+	/**
+	 * 
+	 * Converts the standard formatting of dates.
+	 * 
+	 * @param date (Calendar) date to be converted
+	 * @param oldPattern (String) pattern where the date is formatted
+	 * @param newPattern (String) new pattern to be converted
+	 * @return (Stirng) data converted to the new standard
+	 * 
+	 * @author albertocerqueira
+	 */
+	public static String convertPattern(String date, String oldPattern, String newPattern) throws ParseException {
+		Calendar c = stringToCalendar(date, oldPattern);
+		return calendarToString(c, newPattern);
 	}
 }
