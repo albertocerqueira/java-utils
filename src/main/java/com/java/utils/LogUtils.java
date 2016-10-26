@@ -7,6 +7,11 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Log Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class LogUtils {
 
 	private static Map<String, Boolean> loggerInfo = new HashMap<String, Boolean>();

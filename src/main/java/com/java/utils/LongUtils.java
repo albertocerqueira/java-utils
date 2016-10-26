@@ -3,6 +3,11 @@ package com.java.utils;
 import com.java.IConverter;
 import com.java.exception.ConverterException;
 
+/**
+ * Long Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class LongUtils implements IConverter<Long> {
 
 	private static LongUtils instance = new LongUtils();

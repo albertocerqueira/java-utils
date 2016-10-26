@@ -3,6 +3,11 @@ package com.java.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * List Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class ListUtils {
 
 	/** default join separator **/

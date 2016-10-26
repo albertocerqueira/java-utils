@@ -33,6 +33,7 @@ import java.util.Random;
  * <li>{@link #getRandom(char[], int)} get a fixed-length random string, its a mixture of chars in sourceChar</li>
  * </ul>
  * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class RandomUtils {
 
