@@ -46,6 +46,7 @@ import java.util.List;
  * <li>{@link #makeDirs(String)}</li>
  * </ul>
  * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class FileUtils {
 

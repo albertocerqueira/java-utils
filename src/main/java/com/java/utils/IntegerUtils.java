@@ -6,6 +6,11 @@ import com.java.IConverter;
 import com.java.exception.ConverterException;
 import com.java.regex.RegexValidation;
 
+/**
+ * Integer Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class IntegerUtils implements IConverter<Integer> {
 
 	private static IntegerUtils instance = new IntegerUtils();

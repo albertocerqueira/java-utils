@@ -10,6 +10,11 @@ import java.util.Locale;
 import com.java.exception.ConverterException;
 import com.java.exception.UserException;
 
+/**
+ * Format Currency
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class FormatCurrency {
 
 	private static Locale locale = LocaleUtils.DEFAULT_LOCALE;

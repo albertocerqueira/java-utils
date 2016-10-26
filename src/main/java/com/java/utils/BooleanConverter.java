@@ -3,6 +3,11 @@ package com.java.utils;
 import com.java.IConverter;
 import com.java.exception.ConverterException;
 
+/**
+ * Boolean Converter
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class BooleanConverter implements IConverter<Boolean> {
 
 	private static BooleanConverter instance = new BooleanConverter();
