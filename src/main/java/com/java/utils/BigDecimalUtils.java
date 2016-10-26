@@ -5,6 +5,11 @@ import java.math.BigDecimal;
 import com.java.IConverter;
 import com.java.exception.ConverterException;
 
+/**
+ * BigDecimal Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class BigDecimalUtils implements IConverter<BigDecimal> {
 
 	public static final BigDecimal CEM = BigDecimal.valueOf(100D);
