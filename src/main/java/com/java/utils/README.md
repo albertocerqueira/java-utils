@@ -1,53 +1,53 @@
 ### Utils
 =====================
-### <sub>Classes set of methods that perform common functions often reused. Most classes utilities define these common methods under static scope.</sub>
+<sub>Classes set of methods that perform common functions often reused. Most classes utilities define these common methods under static scope.</sub>
 
-- [<sub>ArrayUtils.java</sub>](#ArrayUtils.java)
-- [<sub>BigDecimalUtils.java</sub>](#bigDecimalUtils.java)
-- [<sub>BooleanConverter.java</sub>](#booleanConverter.java)
-- [<sub>CollectionUtils.java</sub>](#collectionUtils.java)
-- [<sub>DateUtils.java</sub>](#dateUtils.java)
-- [<sub>FormatCurrency.java</sub>](#formatCurrency.java)
-- [<sub>IConverter.java</sub>](#iConverter.java)
-- [<sub>ISO8061Enum.java</sub>](#iSO8061Enum.java)
-- [<sub>IdentificacaoValidation.java</sub>](#identificacaoValidation.java)
-- [<sub>IntegerUtils.java</sub>](#integerUtils.java)
-- [<sub>LongUtils.java</sub>](#longUtils.java)
-- [<sub>SizeUtils.java</sub>](#SizeUtils.java)
-- [<sub>StringUtils.java</sub>](#StringUtils.java)
-- [<sub>SystemUtils.java</sub>](#SystemUtils.java)
-- [<sub>TimeUtils.java</sub>](#TimeUtils.java)
-- [<sub>UUIDUtils.java</sub>](#UUIDUtils.java)
-- [<sub>ValidationUtils.java</sub>](#ValidationUtils.java)
-- [<sub>WSUtils.java</sub>](#WSUtils.java)
+- [ArrayUtils.java](#ArrayUtils.java)
+- [BigDecimalUtils.java](#bigDecimalUtils.java)
+- [BooleanConverter.java](#booleanConverter.java)
+- [CollectionUtils.java](#collectionUtils.java)
+- [DateUtils.java](#dateUtils.java)
+- [FormatCurrency.java](#formatCurrency.java)
+- [IConverter.java](#iConverter.java)
+- [ISO8061Enum.java](#iSO8061Enum.java)
+- [IdentificacaoValidation.java](#identificacaoValidation.java)
+- [IntegerUtils.java](#integerUtils.java)
+- [LongUtils.java](#longUtils.java)
+- [SizeUtils.java](#SizeUtils.java)
+- [StringUtils.java](#StringUtils.java)
+- [SystemUtils.java](#SystemUtils.java)
+- [TimeUtils.java](#TimeUtils.java)
+- [UUIDUtils.java](#UUIDUtils.java)
+- [ValidationUtils.java](#ValidationUtils.java)
+- [WSUtils.java](#WSUtils.java)
 
 
-### <sub>ArrayUtils.java</sub>
+### ArrayUtils.java
  
-### <sub>BigDecimalUtils.java</sub>
+### BigDecimalUtils.java
  
-### <sub>BooleanConverter.java</sub>
+### BooleanConverter.java
  
-### <sub>CollectionUtils.java</sub>
+### CollectionUtils.java
  
-### <sub>DateUtils.java</sub>
-<sub>Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application.<sub>
+### DateUtils.java
+Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application.
  
-### <sub>FormatCurrency.java</sub>
+### FormatCurrency.java
  
-### <sub>IConverter.java</sub>
+### IConverter.java
  
-### <sub>ISO8061Enum.java</sub>
+### ISO8061Enum.java
  
-### <sub>IdentificacaoValidation.java</sub>
+### IdentificacaoValidation.java
  
-### <sub>IntegerUtils.java</sub>
+### IntegerUtils.java
  
-### <sub>LongUtils.java</sub>
+### LongUtils.java
  
-### <sub>SessionUtils.java</sub>
+### SessionUtils.java
   
-### <sub>StringConverter.java</sub>
+### StringConverter.java
  
-### <sub>StringUtils.java</sub>
-<sub>Class with set of methods that perform common functions for handling strings, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/StringUtils.java "see more").</sub>
+### StringUtils.java
+Class with set of methods that perform common functions for handling strings, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/StringUtils.java "see more").
