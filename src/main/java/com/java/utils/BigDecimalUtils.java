@@ -10,8 +10,8 @@ public class BigDecimalUtils implements IConverter<BigDecimal> {
 	public static final BigDecimal CEM = BigDecimal.valueOf(100D);
 	private static BigDecimalUtils instance = new BigDecimalUtils();
 	
-	private BigDecimalUtils(){}
-	public static BigDecimalUtils getInstance(){
+	private BigDecimalUtils() {}
+	public static BigDecimalUtils getInstance() {
 		return instance;
 	}
 	
