@@ -9,22 +9,28 @@ import com.java.regex.RegexValidation;
 /**
  * Integer Utils
  * 
+ * Class with set of methods that perform common functions for handling Integers, validations or treatments, 
+ * often re-used. Most utilities classes define these common methods under static scope.
+ * 
  * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class IntegerUtils implements IConverter<Integer> {
 
 	private static IntegerUtils instance = new IntegerUtils();
 	
-	private IntegerUtils(){}
-	public static IntegerUtils getInstance(){
+	private IntegerUtils() {}
+	public static IntegerUtils getInstance() {
 		return instance;
 	}
 	
 	/**
-	 * Metodo responsável por converter o valor String informado em Integer
-	 * @param value (String) valor a ser transformado em Integer
-	 * @return (Integer) valor transformado em Integer
-	 * @throws ConverterException Caso ocorra algum erro na conversão.
+	 * Method responsible for converting the String value reported in Integer
+	 * 
+	 * <br /><br />
+	 * 
+	 * @param Value (String) value to be converted into Integer
+	 * @return (Integer) Integer value transformed into
+	 * @throws ConverterException If an error occurs in the conversion.
 	 */
 	public Integer convert(String value) throws ConverterException {
 		Integer newInt = null;
@@ -39,9 +45,18 @@ public class IntegerUtils implements IConverter<Integer> {
 	}
 	
 	/**
-	 * Verifica se a String possui apenas números
-	 * @param str (String) string para verificação
-	 * @return (boolean) true caso a String possua apenas número e false caso contrário
+	 * Checks if the String contains only numbers
+	 * 
+	 * <br /><br />
+	 * 
+     * Remember: 
+	 * <ul>
+	 * 	 <li><code>The string must contain only numbers</code></li>
+	 * </ul>
+	 * 
+	 * @param value (String) string to check
+	 * @return (boolean) true if the string has only number, and false otherwise
+	 * @see com.java.regex.RegexValidation.OnlyNumbers()
 	 */
 	public static boolean isOnlyNumber(String value) {
 		boolean ret = false;
@@ -52,17 +67,21 @@ public class IntegerUtils implements IConverter<Integer> {
 	}
 	
 	/**
-	 * Verificar se a String esta vazia<br />
-	 * Exemplos: 
+	 * Check if the string is empty
+	 * 
+	 * <br /><br />
+	 * 
+	 * Examples: 
 	 * <ul>
 	 * 	 <li><code>" " == false</code></li>
 	 * 	 <li><code>"" == true</code></li>
 	 *   <li><code>"0" == true</code></li>
 	 *   <li><code>"1" == false</code></li>
 	 * </ul>
-	 * @param value (String) valor para verificação
-	 * @return (boolean) true para String vazia e false caso contrário
-	 * @see spring.corp.framework.utils.StringUtils.isBlank(String)
+	 * 
+	 * @param value (String) string to check
+	 * @return (boolean) true to empty string and false otherwise
+	 * @see com.java.utils.StringUtils.isBlank(String)
 	 */
 	public static boolean isBlank(String value) {
 		boolean isBlank = StringUtils.isBlank(value);
@@ -75,9 +94,17 @@ public class IntegerUtils implements IConverter<Integer> {
 	}
 	
 	/**
-	 * Converte Number em int
-	 * @param value (Number) para conversão
-	 * @return (int) valor do Number no formato int
+	 * Converte Number to int
+	 * 
+	 * <br /><br />
+	 * 
+	 * Remember: 
+	 * <ul>
+	 * 	 <li><code>Number = null then return 0</code></li>
+	 * </ul>
+	 * 
+	 * @param value (Number) to convert
+	 * @return (int) Number of value in int format
 	 */
     public static int parseInt(Number value) {
         if (value != null) {
@@ -87,9 +114,28 @@ public class IntegerUtils implements IConverter<Integer> {
     }
 
     /**
-     * Converte String em int caso o valor contenha apenas números 
-     * @param value (String) para conversão
-     * @return (int) valor da String no formato int ou 0 (zero) caso isOnlyNumber() seja igual a false
+     * Convert String to int if the value contains only numbers
+     * 
+     * <br /><br />
+     * 
+     * Examples: 
+	 * <ul>
+	 *   <li><code>null == 0</code></li>
+	 * 	 <li><code>" " == 0</code></li>
+	 * 	 <li><code>"" == 0</code></li>
+	 *   <li><code>"albertocerqueira" == 0</code></li>
+	 * </ul>
+	 * 
+     * Remember: 
+	 * <ul>
+	 * 	 <li><code>String equals null then return 0</code></li>
+	 *   <li><code>String equals " " then retrun 0</code></li>
+	 * 	 <li><code>String equals "" then retrun 0</code></li>
+	 *   <li><code>String equals "text" then retrun 0</code></li>
+	 * </ul>
+	 * 
+     * @param value (String) to conversion
+     * @return (Int) value of the String or int format 0 (zero) if isOnlyNumber () is equal to false
      */
     public static int parseInt(String value) {
         if (!StringUtils.isBlank(value) && isOnlyNumber(value)) {
@@ -100,26 +146,57 @@ public class IntegerUtils implements IConverter<Integer> {
 
     /**
      * Transforma uma data (Date) em Integer no formato desejado
-     * @param date (Date) data para conversão
-     * @param pattern (String) padrão desejado
-     * @return (int) representando a data, ou nulo caso o parametro seja nulo.
+     * 
+     * <br /><br />
+     * 
+     * Examples for pattern parameter: 
+	 * <ul>
+	 *   <li><code>"dd/MM/yyyy" == 0</code></li>
+	 *   <li><code>"MM/yyyy" == 0</code></li>
+	 *   <li><code>"MM/dd/yyyy" == 0</code></li>
+	 *   <li><code>"dd/MM/yyyy hh:mm:ss" == 0</code></li>
+	 * </ul>
+	 * 
+     * Remember: 
+	 * <ul>
+	 * 	 <li><code>If the pattern does not contain only numbers then return 0</code></li>
+	 * </ul>
+     * 
+     * @param date (Date) to convert
+     * @param pattern (String) desired pattern
+     * @return (int) representing the date or 0 (zero) if the parameter is null
+     * @see com.java.utils.DateUtils.dateToString(String)
      */
-    public static int parseInt(Date data, String pattern) {
+    public static int parseInt(Date date, String pattern) {
         int ret = 0;
-        if (data != null) {
-			String strData = DateUtils.dateToString(data, pattern);
+        if (date != null) {
+			String strData = DateUtils.dateToString(date, pattern);
+			
+			if (!isOnlyNumber(strData)) {
+				return 0;
+			}
+			
             ret = parseInt(strData);
         }
         return ret;
     }
     
     /**
-     * Transforma uma data (Date) em Integer no formato yyyyMMdd
-     * @param date (Date) data para conversão
-     * @return (int) representando a data, ou nulo caso o parametro seja nulo.
-     * @see spring.corp.framework.utils.IntegerUtils.parseInt(Date, String)
+     * Transforming a date (Date) Integer in the yyyyMMdd format
+     * 
+     * <br /><br />
+     * 
+     * Remember: 
+	 * <ul>
+	 * 	 <li><code>If the date equal null then return 0</code></li>
+	 * </ul>
+     * 
+     * @param date (Date) to convert
+     * @return (int) representing the date or 0 (zero) if the parameter is null
+     * @see com.java.utils.IntegerUtils.parseInt(Date, String)
+     * @see com.java.utils.DateUtils.dateToString(String)
      */
-    public static int parseInt(Date data) {
-    	return parseInt(data, "yyyyMMdd");
+    public static int parseInt(Date date) {
+    	return parseInt(date, "yyyyMMdd");
     }
 }

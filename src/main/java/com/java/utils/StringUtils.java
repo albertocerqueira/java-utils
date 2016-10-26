@@ -11,6 +11,9 @@ import com.java.regex.RegexValidation;
 /**
  * String Utils
  * 
+ * Class with set of methods that perform common functions for handling strings, validations or treatments, 
+ * often re-used. Most utilities classes define these common methods under static scope.
+ * 
  * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class StringUtils implements IConverter<String> {

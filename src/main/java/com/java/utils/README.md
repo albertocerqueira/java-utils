@@ -31,7 +31,7 @@
 ## CollectionUtils.java
  
 ## DateUtils.java
-Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application.
+Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/DateUtils.java "see more").
  
 ## FormatCurrency.java
  
@@ -42,6 +42,7 @@ Class date utilitaria. And strongly recommended that this class be used when a C
 ## IdentificacaoValidation.java
  
 ## IntegerUtils.java
+Class with set of methods that perform common functions for handling Integers, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/IntegerUtils.java "see more").
  
 ## LongUtils.java
  
