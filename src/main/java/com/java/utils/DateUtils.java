@@ -9,11 +9,13 @@ import com.java.IConverter;
 import com.java.exception.ConverterException;
 
 /**
+ * Date Utils
  * 
  * Class date utilitaria. And strongly recommended that this class be used when 
  * a Calendar object must be created for this class forces the locale pt_BR to 
  * this standard being used by the application.
  * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class DateUtils implements IConverter<Calendar> {
 	

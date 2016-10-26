@@ -13,9 +13,9 @@ import java.io.ObjectOutputStream;
 import com.java.io.UnicodeBOMInputStream;
 
 /**
- * 
  * IO utils
- *
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class IOUtils {
 

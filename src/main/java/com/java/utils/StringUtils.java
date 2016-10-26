@@ -8,6 +8,11 @@ import com.java.IConverter;
 import com.java.exception.ConverterException;
 import com.java.regex.RegexValidation;
 
+/**
+ * String Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class StringUtils implements IConverter<String> {
 
 	private static final int PAD_LIMIT = 8192;

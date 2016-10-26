@@ -3,6 +3,11 @@ package com.java.utils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Time Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class TimeUtils {
 
 	public static final SimpleDateFormat DEFAULT_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

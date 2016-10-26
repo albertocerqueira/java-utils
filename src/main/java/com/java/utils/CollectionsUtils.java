@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Collection Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class CollectionsUtils {
 
 	/**
