@@ -22,7 +22,7 @@ import java.util.List;
  * <li>{@link ShellUtils#execCommand(String[], boolean, boolean)}</li>
  * </ul>
  * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-16
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class ShellUtils {
 

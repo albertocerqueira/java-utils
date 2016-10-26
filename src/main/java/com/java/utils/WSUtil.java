@@ -27,6 +27,11 @@ import org.xml.sax.SAXException;
 import com.java.exception.CriticalUserException;
 import com.java.exception.UserException;
 
+/**
+ * WS Utils
+ * 
+ * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
+ */
 public class WSUtil {
 
 	public static <T> OutputStream marshall(T object, String schemaPath) throws IOException {
