@@ -1,4 +1,4 @@
-### Utils
+# Utils
 =====================
 <sub>Classes set of methods that perform common functions often reused. Most classes utilities define these common methods under static scope.</sub>
 
@@ -22,32 +22,32 @@
 - [WSUtils.java](#WSUtils.java)
 
 
-### ArrayUtils.java
+## ArrayUtils.java
  
-### BigDecimalUtils.java
+## BigDecimalUtils.java
  
-### BooleanConverter.java
+## BooleanConverter.java
  
-### CollectionUtils.java
+## CollectionUtils.java
  
-### DateUtils.java
+## DateUtils.java
 Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application.
  
-### FormatCurrency.java
+## FormatCurrency.java
  
-### IConverter.java
+## IConverter.java
  
-### ISO8061Enum.java
+## ISO8061Enum.java
  
-### IdentificacaoValidation.java
+## IdentificacaoValidation.java
  
-### IntegerUtils.java
+## IntegerUtils.java
  
-### LongUtils.java
+## LongUtils.java
  
-### SessionUtils.java
+## SessionUtils.java
   
-### StringConverter.java
+## StringConverter.java
  
-### StringUtils.java
+## StringUtils.java
 Class with set of methods that perform common functions for handling strings, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/StringUtils.java "see more").
