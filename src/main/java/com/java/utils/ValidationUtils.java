@@ -8,11 +8,11 @@ import com.java.regex.RegexValidation;
  * @author <a href="https://github.com/albertocerqueira/" target="_blank">Alberto Cerqueira</a> 2016-10-26
  */
 public class ValidationUtils {
-
+	
 	/**
-	 * Validação de códigos de renavam
-	 * @param renavam (String) código de renavam para validação
-	 * @return (boolean) true para código válido e false para código inválido
+	 * Validation codes Renavam
+	 * @param renavam (String) Renavam code for validation
+	 * @return (Boolean) true for valid code and false for invalid code
 	 */
 	public static boolean renavamValid(String renavam) {
 		// Pegando como exemplo o renavam = 639884962
@@ -81,15 +81,15 @@ public class ValidationUtils {
 	}
 
 	/**
-	 * Validação de emails
-	 * @param email (String) email para validação
-	 * @return (boolean) true para email válido e false para email inválido
+	 * Validation E-mail
+	 * @param email (String) for validation E-mail
+	 * @return (Boolean) true for valid E-mail address and false for invalid email
 	 */
 	public static boolean emailValid(String email) {
 		if (StringUtils.isBlank(email)) {
 			return false;
 		}
-		// Valida se esta no formato correto
+		// Validates that is in the correct format
 		if (!email.matches(RegexValidation.EMAIL.expression())) {
 			return false;
 		}
@@ -100,15 +100,15 @@ public class ValidationUtils {
 	}
 	
 	/**
-	 * Validação de número de placas
-	 * @param placa (String) número de placa para validação
-	 * @return (boolean) true para número de placa válida e false para inválida
+	 * Validation number of Placa
+	 * @param plate (String) Placa number for validation
+	 * @return (Boolean) true for valid Placa number and false for invalid
 	 */
 	public static boolean placaValid(String placa) {
 		if (StringUtils.isBlank(placa)) {
 			return false;
 		}
-		// Valida se esta no formato correto
+		// Validates that is in the correct format
 		if (!placa.matches(RegexValidation.PLACA.expression())) {
 			return false;
 		}
@@ -116,25 +116,42 @@ public class ValidationUtils {
 	}
 	
 	/**
-	 * Validação de cpf
-	 * @param placa (String) número do cpf para validação
-	 * @return (boolean) true para número de cpf válido e false para inválido
-	 * @see .spring.corp.framework.utilsIdentificationValidation.validaCPF(String)
+	 * Validation CPF
+	 * @param cpf (String) CPF number for validation
+	 * @return (Boolean) true for valid CPF number and false for invalid
+	 * @see com.java.utils.IdentificationValidation.validaCPF (String)
 	 */
 	public static boolean cpfValid(String cpf) {
 		return IdentificationValidation.cpfInstance.validaCPF(cpf);
 	}
 	
 	/**
-	 * Validação de cpf
-	 * @param placa (String) número do cpf para validação
-	 * @return (boolean) true para número de cpf válido e false para inválido
-	 * @see .spring.corp.framework.utilsIdentificationValidation.validaCNPJ(String)
+	 * Validation CNPJ
+	 * @param cnpj (String) CNPJ number for validation
+	 * @return (Boolean) true for valid CNPJ number and false for invalid
+	 * @see com.java.utils.IdentificationValidation.validaCNPJ (String)
 	 */
 	public static boolean cnpjValid(String cnpj) {
 		return IdentificationValidation.cnpjInstance.validaCNPJ(cnpj);
 	}
 	
-	// TODO: Inserir validador de CEP
+	/**
+	 * Zip Code Number Validation
+	 * @param zipCode (String) Zip Code number for validation
+	 * @return (Boolean) true for valid Zip Code number and false for invalid
+	 */
+	public static boolean zipCodeValid(String zipCode) {
+		// TODO: add i18n
+		
+		if (StringUtils.isBlank(zipCode)) {
+			return false;
+		}
+		// Validates that is in the correct format
+		if (!zipCode.matches(RegexValidation.CEP.expression())) {
+			return false;
+		}
+		return true;
+	}
+	
 	// TODO: Inserir validador de Outros
 }

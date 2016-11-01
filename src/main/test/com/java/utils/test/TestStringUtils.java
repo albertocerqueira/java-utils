@@ -27,4 +27,11 @@ public class TestStringUtils {
 		assertEquals(StringUtils.isOnlyLettersOrNumbers("albertocerqueira1990"), true);
 		assertEquals(StringUtils.isOnlyLettersOrNumbers(null), false);
 	}
+	
+	@Test
+	public void test_normalizeOnlyLettersNumbers() {
+		assertEquals(StringUtils.normalizeOnlyLettersNumbers("albertocerqueira"), "albertocerqueira");
+		assertEquals(StringUtils.normalizeOnlyLettersNumbers("albertocerqueira1990"), "albertocerqueira1990");
+		assertEquals(StringUtils.normalizeOnlyLettersNumbers("@lberto.cerqueira-1990"), "lbertocerqueira1990");
+	}
 }
