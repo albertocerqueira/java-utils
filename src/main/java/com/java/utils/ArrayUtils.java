@@ -322,4 +322,13 @@ public class ArrayUtils {
         Integer[] array = ObjectUtils.transformIntArray(sourceArray);
         return getNext(array, value, defaultValue, isCircle);
     }
+    
+    /**
+     * printing array on console
+     */
+    public void print() {
+        for (int i = 0; i < size; i++) {
+        	System.out.println(i + " : " + values[i]);
+        }
+    }
 }
