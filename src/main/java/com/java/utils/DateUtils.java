@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import com.java.IConverter;
 import com.java.exception.ConverterException;
@@ -196,5 +197,50 @@ public class DateUtils implements IConverter<Calendar> {
 	public static String convertPattern(String date, String oldPattern, String newPattern) throws ParseException {
 		Calendar c = stringToCalendar(date, oldPattern);
 		return calendarToString(c, newPattern);
+	}
+	
+	public static String pegarPrimeiroDiaDoMesAtual() {
+		Calendar cal = GregorianCalendar.getInstance();
+		return pegarPrimeiroDiaDoMesAtual(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
+	}
+	
+	public static String pegarPrimeiroDiaDoMesAtual(Integer mes) {
+		return pegarPrimeiroDiaDoMesAtual(mes, BRAZILIAN_PATTERN);
+	}
+	
+	public static String pegarPrimeiroDiaDoMesAtual(String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		return pegarPrimeiroDiaDoMesAtual(cal.get(Calendar.MONTH), padrao);
+	}
+	
+	public static String pegarPrimeiroDiaDoMesAtual(Integer mes, String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		cal.setTime(new Date());
+		cal.set(Calendar.MONTH, mes);
+		cal.set(Calendar.DAY_OF_MONTH, 1);
+
+		return calendarToString(cal, padrao);
+	}
+	
+	public static String pegarUltimoDiaDoMesAtual() {
+		Calendar cal = GregorianCalendar.getInstance();
+		return pegarUltimoDiaDoMesAtual(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
+	}
+	
+	public static String pegarUltimoDiaDoMesAtual(Integer mes) {
+		return pegarUltimoDiaDoMesAtual(mes, BRAZILIAN_PATTERN);
+	}
+	
+	public static String pegarUltimoDiaDoMesAtual(String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		return pegarUltimoDiaDoMesAtual(cal.get(Calendar.MONTH), padrao);
+	}
+	
+	public static String pegarUltimoDiaDoMesAtual(Integer mes, String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		cal.setTime(new Date());
+		cal.set(cal.get(Calendar.YEAR), mes, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+		
+		return calendarToString(cal, padrao);
 	}
 }
