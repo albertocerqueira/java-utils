@@ -34,6 +34,7 @@ public enum RegexValidation implements IRegexValidation {
 	CEP("^[0-9]{2}.[0-9]{3}-[0-9]{3}$|^[0-9]{5}-[0-9]{3}$|^[0-9]{8}$"),
 	PLACA("[A-Z]{3}[0-9]{4}|[A-Z]{3}-[0-9]{4}"),
 	OnlyNumbers("^[0-9]+$"),
+	OnlyNumbersFloats("^([+-]?\\d*\\.?\\d*)$"),
 	OnlyLetters("^[a-zA-Z]+$"),
 	OnlyLettersOrNumbers("^[a-zA-Z0-9]+$");
 	

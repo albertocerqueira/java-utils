@@ -7,6 +7,7 @@
 - [BooleanConverter.java](#booleanConverter.java)
 - [CollectionUtils.java](#collectionUtils.java)
 - [DateUtils.java](#dateUtils.java)
+- [DoubleUtils.java](#dateUtils.java)
 - [FormatCurrency.java](#formatCurrency.java)
 - [IConverter.java](#iConverter.java)
 - [ISO8061Enum.java](#iSO8061Enum.java)
@@ -32,6 +33,9 @@
  
 ## DateUtils.java
 Class date utilitaria. And strongly recommended that this class be used when a Calendar object must be created for this class forces the locale pt_BR to this standard being used by the application. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/DateUtils.java "see more").
+ 
+## DoubleUtils.java
+Class with set of methods that perform common functions for handling doubles, validations or treatments, often re-used. Most utilities classes define these common methods under static scope. [see more](https://github.com/albertocerqueira/java-utils/blob/master/src/main/java/com/java/utils/DoubleUtils.java "see more").
  
 ## FormatCurrency.java
  

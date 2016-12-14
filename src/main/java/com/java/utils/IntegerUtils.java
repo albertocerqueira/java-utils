@@ -37,8 +37,8 @@ public class IntegerUtils implements IConverter<Integer> {
 		if (value != null && !value.equals("")) {
 			try {
 				newInt = Integer.valueOf(value);
-			} catch (NumberFormatException nfe) {
-				throw new ConverterException(this.getClass(), nfe);
+			} catch (NumberFormatException e) {
+				throw new ConverterException(this.getClass(), e);
 			}
 		}
 		return newInt;

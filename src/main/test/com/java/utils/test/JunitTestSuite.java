@@ -15,6 +15,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({ 
 	TestArrayUtils.class, 
 	TestDateUtils.class, 
+	TestDoubleUtils.class, 
 	TestIntegerUtils.class,
 	TestStringUtils.class,
 	TestValidationUtils.class,
