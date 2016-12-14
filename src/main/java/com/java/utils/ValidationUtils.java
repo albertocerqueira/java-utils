@@ -153,5 +153,23 @@ public class ValidationUtils {
 		return true;
 	}
 	
+	public static boolean eanValid(String ean) {
+		int digit;
+		int calculated;
+		String checkSum = "131313131313";
+		int sum = 0;
+		if (ean.length() == 8 || ean.length() == 13) {
+			digit = Integer.parseInt("" + ean.charAt(ean.length() - 1));
+			String _ean = ean.substring(0, ean.length() - 1);
+			for (int i = 0; i <= _ean.length() - 1; i++) {
+				sum += (Integer.parseInt("" + _ean.charAt(i))) * (Integer.parseInt("" + checkSum.charAt(i)));
+			}
+			calculated = 10 - (sum % 10);
+			return (digit == calculated);
+		} else {
+			return false;
+		}
+	}
+	
 	// TODO: Inserir validador de Outros
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import com.java.generator.Cnpj;
 import com.java.generator.Cpf;
+import com.java.generator.EAN;
 import com.java.generator.Placa;
 import com.java.generator.Renavam;
 import com.java.utils.IdentificationValidation;
@@ -59,5 +60,12 @@ public class TestValidationUtils {
 		assertEquals(ValidationUtils.placaValid(Placa.get()), true);
 		assertEquals(ValidationUtils.placaValid(Placa.get()), true);
 		assertEquals(ValidationUtils.placaValid("ABCD-123"), false);
+	}
+	
+	@Test
+	public void test_eanValid() {
+		assertEquals(ValidationUtils.eanValid(EAN.get()), true);
+		assertEquals(ValidationUtils.eanValid(EAN.get()), true);
+		assertEquals(ValidationUtils.eanValid("12345"), false);
 	}
 }

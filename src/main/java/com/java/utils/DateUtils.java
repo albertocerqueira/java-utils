@@ -218,7 +218,6 @@ public class DateUtils implements IConverter<Calendar> {
 		cal.setTime(new Date());
 		cal.set(Calendar.MONTH, mes);
 		cal.set(Calendar.DAY_OF_MONTH, 1);
-
 		return calendarToString(cal, padrao);
 	}
 	
@@ -240,7 +239,6 @@ public class DateUtils implements IConverter<Calendar> {
 		Calendar cal = GregorianCalendar.getInstance();
 		cal.setTime(new Date());
 		cal.set(cal.get(Calendar.YEAR), mes, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-		
 		return calendarToString(cal, padrao);
 	}
 }
