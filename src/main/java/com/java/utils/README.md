@@ -7,7 +7,7 @@
 - [BooleanConverter.java](#booleanConverter.java)
 - [CollectionUtils.java](#collectionUtils.java)
 - [DateUtils.java](#dateUtils.java)
-- [DoubleUtils.java](#dateUtils.java)
+- [DoubleUtils.java](#doubleUtils.java)
 - [FormatCurrency.java](#formatCurrency.java)
 - [IConverter.java](#iConverter.java)
 - [ISO8061Enum.java](#iSO8061Enum.java)
