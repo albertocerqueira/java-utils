@@ -1,5 +1,6 @@
 package com.java.utils;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -72,6 +73,17 @@ public class DateUtils implements IConverter<Calendar> {
 	 */
 	public static String today(String pattern) {
 		return calendarToString(Calendar.getInstance(), pattern);
+	}
+	
+	/**
+	 * Data de amanha
+	 * @param pattern (String) padrão desejado
+	 * @return (String) data no formato string com padrão do parametro
+	 */
+	public static String tomorrow(String pattern) {
+		Calendar c = Calendar.getInstance();
+		c.add(Calendar.DAY_OF_MONTH, -1);
+		return calendarToString(c, pattern);
 	}
 	
 	/**
@@ -198,47 +210,266 @@ public class DateUtils implements IConverter<Calendar> {
 		Calendar c = stringToCalendar(date, oldPattern);
 		return calendarToString(c, newPattern);
 	}
-	
+
+	// Semanal
+	public static String pegarPrimeiroDiaDaSemanaAtual() {
+		return pegarPrimeiroDiaDaSemanaAtual(BRAZILIAN_PATTERN);
+	}
+
+	public static String pegarPrimeiroDiaDaSemanaAtual(String padrao) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.clear(Calendar.MINUTE);
+		cal.clear(Calendar.SECOND);
+		cal.clear(Calendar.MILLISECOND);
+
+		cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+
+		return calendarToString(cal, padrao);
+	}
+
+	public static String pegarUltimoDiaDaSemanaAtual() {
+		return pegarUltimoDiaDaSemanaAtual(BRAZILIAN_PATTERN);
+	}
+
+	public static String pegarUltimoDiaDaSemanaAtual(String padrao) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.clear(Calendar.MINUTE);
+		cal.clear(Calendar.SECOND);
+		cal.clear(Calendar.MILLISECOND);
+
+		cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+
+		cal.add(Calendar.WEEK_OF_YEAR, 1);
+		cal.add(Calendar.MILLISECOND, -1);
+
+		return calendarToString(cal, padrao);
+	}
+
+	// Mensal
 	public static String pegarPrimeiroDiaDoMesAtual() {
 		Calendar cal = GregorianCalendar.getInstance();
-		return pegarPrimeiroDiaDoMesAtual(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
+		return pegarPrimeiroDiaDoMes(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
 	}
-	
-	public static String pegarPrimeiroDiaDoMesAtual(Integer mes) {
-		return pegarPrimeiroDiaDoMesAtual(mes, BRAZILIAN_PATTERN);
+
+	public static String pegarPrimeiroDiaDoMes(Integer mes) {
+		return pegarPrimeiroDiaDoMes(mes, BRAZILIAN_PATTERN);
 	}
-	
+
 	public static String pegarPrimeiroDiaDoMesAtual(String padrao) {
 		Calendar cal = GregorianCalendar.getInstance();
-		return pegarPrimeiroDiaDoMesAtual(cal.get(Calendar.MONTH), padrao);
+		return pegarPrimeiroDiaDoMes(cal.get(Calendar.MONTH), padrao);
 	}
-	
-	public static String pegarPrimeiroDiaDoMesAtual(Integer mes, String padrao) {
+
+	public static String pegarPrimeiroDiaDoMes(Integer mes, String padrao) {
 		Calendar cal = GregorianCalendar.getInstance();
 		cal.setTime(new Date());
 		cal.set(Calendar.MONTH, mes);
 		cal.set(Calendar.DAY_OF_MONTH, 1);
+
 		return calendarToString(cal, padrao);
 	}
-	
+
 	public static String pegarUltimoDiaDoMesAtual() {
 		Calendar cal = GregorianCalendar.getInstance();
-		return pegarUltimoDiaDoMesAtual(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
+		return pegarUltimoDiaDoMes(cal.get(Calendar.MONTH), BRAZILIAN_PATTERN);
 	}
-	
-	public static String pegarUltimoDiaDoMesAtual(Integer mes) {
-		return pegarUltimoDiaDoMesAtual(mes, BRAZILIAN_PATTERN);
+
+	public static String pegarUltimoDiaDoMes(Integer mes) {
+		return pegarUltimoDiaDoMes(mes, BRAZILIAN_PATTERN);
 	}
-	
+
 	public static String pegarUltimoDiaDoMesAtual(String padrao) {
 		Calendar cal = GregorianCalendar.getInstance();
-		return pegarUltimoDiaDoMesAtual(cal.get(Calendar.MONTH), padrao);
+		return pegarUltimoDiaDoMes(cal.get(Calendar.MONTH), padrao);
 	}
-	
-	public static String pegarUltimoDiaDoMesAtual(Integer mes, String padrao) {
+
+	public static String pegarUltimoDiaDoMes(Integer mes, String padrao) {
 		Calendar cal = GregorianCalendar.getInstance();
 		cal.setTime(new Date());
 		cal.set(cal.get(Calendar.YEAR), mes, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+
 		return calendarToString(cal, padrao);
+	}
+
+	// Anual
+	public static String pegarPrimeiroDiaDoAnoAtual() {
+		return pegarPrimeiroDiaDoAnoAtual(BRAZILIAN_PATTERN);
+	}
+
+	public static String pegarPrimeiroDiaDoAnoAtual(String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		cal.setTime(new Date());
+		cal.set(Calendar.MONTH, 0);
+		cal.set(Calendar.DAY_OF_MONTH, 1);
+
+		return calendarToString(cal, padrao);
+	}
+
+	public static String pegarUltimoDiaDoAnoAtual() {
+		return pegarUltimoDiaDoAnoAtual(BRAZILIAN_PATTERN);
+	}
+
+	public static String pegarUltimoDiaDoAnoAtual(String padrao) {
+		Calendar cal = GregorianCalendar.getInstance();
+		cal.setTime(new Date());
+		cal.set(cal.get(Calendar.YEAR), 11, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+
+		return calendarToString(cal, padrao);
+	}
+
+	public static String identificacao(String data) throws NumberFormatException, ParseException {
+		String today = today("dd/MM/yyyy");
+
+		if (today.equals(data)) {
+			return "today";
+		} else {
+			Integer firstDayOfTheWeek = Integer.parseInt(pegarPrimeiroDiaDaSemanaAtual("yyyyMMdd"));
+			Integer lastDayOfTheWeek = Integer.parseInt(pegarUltimoDiaDaSemanaAtual("yyyyMMdd"));
+			Integer iData = Integer.parseInt(convertPattern(data, "dd/MM/yyyy", "yyyyMMdd"));
+			String yesterday = tomorrow("dd/MM/yyyy");
+			String month = today("MM/yyyy");
+			String year = today("yyyy");
+			Calendar c = Calendar.getInstance();
+			c.add(Calendar.MONTH, -1);
+			String lastmonth = calendarToString(c, "MM/yyyy");
+
+			if (firstDayOfTheWeek <= iData && iData <= lastDayOfTheWeek) {
+				if (yesterday.equals(data)) {
+					if (month.equals(data.substring(3))) {
+						return "yesterday-thisweek-thismonth-thisyear";
+					} else {
+						if (year.equals(data.substring(6))) {
+							return "yesterday-thisweek-thisyear";
+						} else {
+							return "yesterday-thisweek";
+						}
+					}
+				} else {
+					if (month.equals(data.substring(3))) {
+						return "thisweek-thismonth-thisyear";
+					} else {
+						if (year.equals(data.substring(6))) {
+							return "thisweek-thisyear";
+						} else {
+							return "thisweek";
+						}
+					}
+				}
+			} else {
+				if (month.equals(data.substring(3))) {
+					if (yesterday.equals(data)) {
+						return "yesterday-thismonth-thisyear";
+					} else {
+						return "thismonth-thisyear";
+					}
+				} else {
+					if (lastmonth.equals(data.substring(3))) {
+						if (year.equals(data.substring(6))) {
+							if (yesterday.equals(data)) {
+								return "yesterday-lastmonth-thisyear";
+							} else {
+								return "lastmonth-thisyear";
+							}
+						} else {
+							if (yesterday.equals(data)) {
+								return "yesterday-lastmonth";
+							} else {
+								return "lastmonth";
+							}
+						}
+					} else {
+						if (year.equals(data.substring(6))) {
+							return "thisyear";
+						}
+					}
+				}
+			}
+		}
+
+		return "unidentifieddate";
+	}
+
+	public static String identificacaoData(String identificacao) {
+		if ("today".equals(identificacao)) {
+			return "Today";
+		} else if ("yesterday".equals(identificacao)) {
+			return "Yesterday";
+		} else if ("thisweek".equals(identificacao)) {
+			return "This Week";
+		} else if ("thismonth".equals(identificacao)) {
+			return "This Month";
+		} else if ("lastmonth".equals(identificacao)) {
+			return "Last Month";
+		} else if ("thisyear".equals(identificacao)) {
+			return "This Year";
+		} else if ("unidentifieddate".equals(identificacao)) {
+			return "Unidentified Date";
+		} else {
+			return "Unidentified Date";
+		}
+	}
+
+	public static String dataRandomica(String padrao, int initialYear, int finalYear) {
+		if (initialYear > finalYear) {
+			int ano = finalYear;
+			finalYear = initialYear;
+			initialYear = ano;
+		}
+
+		Calendar cInitialYear = Calendar.getInstance();
+		cInitialYear.set(Calendar.YEAR, 2015);
+		long offset = cInitialYear.getTimeInMillis();
+
+		Calendar cFinalYear = Calendar.getInstance();
+		cFinalYear.set(Calendar.YEAR, 2016);
+		long end = cFinalYear.getTimeInMillis();
+
+		long diff = end - offset + 1;
+		Timestamp timestamp = new Timestamp(offset + (long) (Math.random() * diff));
+		Date date = new Date(timestamp.getTime());
+
+		return dateToString(date, padrao);
+	}
+	
+	public static int differenceOfDays(String initialDay, String finalDay) throws ParseException {
+		Date d1 = stringToDate(initialDay, "dd/MM/yyyy");
+		Date d2 = stringToDate(finalDay, "dd/MM/yyyy");
+		return differenceOfDays(d1, d2);
+	}
+	
+	public static int differenceOfDays(Date initialDay, Date finalDay) {
+		Calendar cInicial = Calendar.getInstance();
+		cInicial.setTime(initialDay);
+		Calendar cFinal = Calendar.getInstance();
+		cFinal.setTime(finalDay);
+		return differenceOfDays(cInicial, cFinal);
+	}
+	
+	public static int differenceOfDays(Calendar initialDay, Calendar finalDay) {
+		Calendar dayOne = (Calendar) initialDay.clone();
+		Calendar dayTwo = (Calendar) finalDay.clone();
+
+		if (dayOne.get(Calendar.YEAR) == dayTwo.get(Calendar.YEAR)) {
+			return Math.abs(dayOne.get(Calendar.DAY_OF_YEAR) - dayTwo.get(Calendar.DAY_OF_YEAR));
+		} else {
+			if (dayTwo.get(Calendar.YEAR) > dayOne.get(Calendar.YEAR)) {
+				// swap them
+				Calendar temp = dayOne;
+				dayOne = dayTwo;
+				dayTwo = temp;
+			}
+			
+			int extraDays = 0;
+			int dayOneOriginalYearDays = dayOne.get(Calendar.DAY_OF_YEAR);
+			while (dayOne.get(Calendar.YEAR) > dayTwo.get(Calendar.YEAR)) {
+				dayOne.add(Calendar.YEAR, -1);
+				// getActualMaximum() important for leap years
+				extraDays += dayOne.getActualMaximum(Calendar.DAY_OF_YEAR);
+			}
+
+			return extraDays - dayTwo.get(Calendar.DAY_OF_YEAR) + dayOneOriginalYearDays;
+		}
 	}
 }
