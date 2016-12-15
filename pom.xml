@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.java</groupId>
-	<artifactId>java-utils</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.java.albertocerqueira</groupId>
+	<artifactId>java-utils-albertocerqueira</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>java-utils</name>
+	<name>java-utils-albertocerqueira</name>
 	<url>https://github.com/albertocerqueira/</url>
 
 	<developers>
