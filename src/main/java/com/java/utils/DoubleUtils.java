@@ -98,4 +98,15 @@ public class DoubleUtils implements IConverter<Double> {
 	public static boolean isZero(double value) {
 		return Double.compare(value, Double.valueOf(0.0)) <= 0;
 	}
+	
+	public static double round(double round, int decimal, int ceilOrFloor) {
+		round *= (Math.pow(10, decimal));
+		if (ceilOrFloor == 0) {
+			round = Math.ceil(round);
+		} else {
+			round = Math.floor(round);
+		}
+		round /= (Math.pow(10, decimal));
+		return round;
+	}
 }
