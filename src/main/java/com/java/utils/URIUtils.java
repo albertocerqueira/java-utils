@@ -28,6 +28,15 @@ public class URIUtils {
 		return map;
 	}
 	
+	public static String context(String url, int position) {
+		if (!StringUtils.isBlank(url)) {
+			String[] path = url.split("/");
+			return path[position];
+		} else {
+			return "";
+		}
+	}
+	
 	public static Map<String, String> getParamsQuery(String query) {
 		if (StringUtils.isBlank(query)) {
 			return new HashMap<String, String>();
