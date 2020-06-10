@@ -13,7 +13,7 @@ public class URIUtils {
 		}
 		
 		String[] partes = uri.split("[?]");
-		if (partes == null || partes.length == 0) {
+		if (partes == null || partes.length <= 1) {
 			return new HashMap<String, String>();
 		}
 		
