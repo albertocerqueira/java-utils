@@ -12,17 +12,23 @@ public class URIUtils {
 			return new HashMap<String, String>();
 		}
 		
-		String[] partes = uri.split("[?]");
-		if (partes == null || partes.length <= 1) {
+		String[] parts = uri.split("[?]");
+		if (parts == null || parts.length <= 1) {
 			return new HashMap<String, String>();
 		}
 		
-		String[] parametros = partes[1].split("&");
+		String[] params = parts[1].split("&");
 		Map<String, String> map = new HashMap<String, String>();
-		for (String param : parametros) {
-			String name = param.split("=")[0];
-			String value = param.split("=")[1];
-			map.put(name, value);
+		for (String p : params) {
+			String[] param = p.split("=");
+			String name = param[0];
+			
+			if (param.length > 1) {
+				String value = param[1];
+				map.put(name, value);
+			} else {
+				map.put(name, null);
+			}
 		}
 		
 		return map;
