@@ -24,7 +24,7 @@ public class DoubleUtils implements IConverter<Double> {
 	 */
 	public Double convert(String value) throws ConverterException {
 		Double newDouble = null;
-		if (value != null && !value.equals("")) {
+		if (value != null && !value.equals("") && !value.equalsIgnoreCase("null")) {
 			try {
 				newDouble = new Double(value);
 			} catch(Exception e) {
